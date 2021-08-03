@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box; /* 3l4an l margin w l padding may5od4 mn msa7t l box */
+    margin: 0;
+    padding: 0
+}
+body {
+    font-family: tahoma, sans-serif
+}
+
+/******** Memory Game ************/
+.game {
+  /*height: 500px;*/
+  border: 1px solid black
+}
+.control-buttons {
+  position: absolute;
+  left: 0;
+  top: 353px;
+  width: 100%;
+  height: 1440px;
+  z-index: 2;
+  background-color: rgba(248, 201, 230, 0.9);
+}
+.control-buttons span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #7574A7;
+  color: #FFF;
+  padding: 15px 25px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.outer {
+  width: 1080px;
+  margin: 20px auto 0;
+  background-color: #F6F6F6;
+  padding: 20px;
+  font-size: 24px;
+  overflow: hidden;
+  border: 3px outset #7574A7;
+  color:#7574A7 ;
+} 
+.outer span {
+  color: #CD6B97;
+}
+.outer .name {
+  float: left;
+  width: 50%;
+}
+.outer .tries {
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+.inner {
+  display: flex;
+  width: 1100px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+.inner.no-clicking {
+  pointer-events: none; /*y3ni m4 h2dr aft7 card tani m4 hystgeb ll event*/
+}
+.inner .gameBlock {
+  height: 200px;
+  transition: transform .5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  /*flex: 1 0 165px;
+  margin: 0 -24px -80px;*/
+  flex: 1 0 200px;
+  margin: 0 10px 20px;
+  
+}
+.inner .gameBlock .front {
+  background-color: #CD6B97;
+  line-height: 200px; /*nfs height l block 3l4an 3lamt l ? tkon 2dha*/
+}
+.inner .gameBlock .front:before {
+  content: '?';
+  color: #7574A7;
+  font-size: 140px;
+  font-weight: bold;
+}
+.inner .gameBlock .back {
+  background-color: #7574A7;
+  transform: rotateY(180deg);
+}
+.inner .gameBlock .back img {
+  width: 140px;
+  height: 140px;
+  margin-top: 30px;
+}
+.inner .gameBlock .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  border: 5px solid #7574A7;
+}
+/* flibbed*/
+.inner .gameBlock.flipped,
+.inner .gameBlock.match {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
